@@ -9,8 +9,8 @@ def add_todo():
         functions.update_todo_list(todos)
         st.session_state["new_todo"] = ""
 
-st.title("Yours todo list")
-st.subheader("Today you need:")
+st.title("Наш список дел.")
+st.subheader("Что нужно:")
 
 # todos list
 todos: list = functions.get_todos()
@@ -25,6 +25,6 @@ for index, todo in enumerate(todos):
 
 st.text_input(label="Enter a todo: ",
               label_visibility='hidden',
-              placeholder="Enter a new todo...",
+              placeholder="Введи напоминалку...",
               on_change=add_todo,
               key="new_todo")
